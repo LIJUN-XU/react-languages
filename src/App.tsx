@@ -1,11 +1,15 @@
-import { useState } from 'react'
+// import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import { useTranslation, Trans } from 'react-i18next';
 
 function App() {
-
-
+  const { t,i18n } = useTranslation();
+  console.log('language===',i18n.language)
+  function changeLanguage(lng: string) {
+    i18n.changeLanguage(lng);
+  }
   return (
     <>
       <div>
@@ -16,9 +20,12 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>Vite + React</h1>
-      <p>
-        welcome to my app!
+      <h1 onClick={() => changeLanguage('zh')}>{t('welcome')}</h1>
+      <Trans i18nKey="author">
+          作者是: <code>{Date.now()}</code>
+        </Trans>
+      <p onClick={() => changeLanguage('en')}>
+        welcome to my app1
       </p>
       {/* <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
