@@ -36,7 +36,7 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>Vite + React1</h1>
+      <h1>Vite + React12</h1>
       <p>
         <FormattedMessage id="welcome_msg" />
         {/* welcome to my app! */}
